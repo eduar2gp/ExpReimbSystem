@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+#myTabContent {
+    justify-content: center;
+    align-self: center;
+}
+
+div>ul>li:hover {
+    background-color: rgb(196, 219, 240);
+}
+
+.navbar{
+	background-image: linear-gradient(to bottom right, rgba(153, 227, 245, 0), rgb(139, 207, 224))
+}
+
+div>ul>li:active {
+    background-color: rgb(137, 184, 238);
+}
+
+/*@media (min-width: 992px) {
+  .modalSize{
+    min-width: 800px !important;
+    background: white;
+  }
+}*/
+
+.modal-dialog{
+	min-width: 750px;	
+	
+}
+
+@media (max-width: 2000px) {
+    #home {
+        margin-left: 250px;
+        margin-right: 250px;
+        margin-top: 100px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 1000px) {
+    #home {
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 100px;
+        padding: 10px;
+    }
+}
+
+.tab-content {}
+
+.reimbursement {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: auto;
+}
+
+.dates {
+    display: grid;
+    justify-content: flex-end;
+}
+
+.oneColumn{ 
+	display: grid;
+	grid-template-columns: 1fr;
+	margin-left: 2px;
+}
+
+
+.card{
+	display: grid;
+	grid-template-columns: 1fr 2fr 3fr 1fr;
+	grid-template-rows: auto; 
+}
+
+
+label {
+    font-family: cursive;
+}
+
+.profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#submitButtonDiv {
+    display: grid;
+    justify-items: center;
+}

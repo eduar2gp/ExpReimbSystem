@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/manager.css" />    
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" onclick="logout()">Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+                    <button class="btn btn-success" onclick="filter()">Search</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- tabs -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Profile</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Pending</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="resolved-tab" data-bs-toggle="tab" data-bs-target="#resolved" type="button" role="tab" aria-controls="resolved" aria-selected="false">Resolved</button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="profile">
+                <h6 style="text-align: center;">User</h6>
+                <label id="username">This is for username</label>
+                <h6 style="text-align: center;">Email</h6>
+                <label id="useremail">This is for email</label>
+                <h6 style="text-align: center;">First Name</h6>
+                <label id="userFirstName">This is for user first name</label>
+                <h6 style="text-align: center;">Last Name</h6>
+                <label id="userLastName">This is for last name</label>
+            </div>
+        </div>
+        <div CLASS="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <ul class="list-group" id="listReimbPending">
+            </ul>
+        </div>
+        <div CLASS="tab-pane fade" id="resolved" role="tabpanel" aria-labelledby="resolved-tab">
+            <ul class="list-group" id="listReimbResolved">
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <!-- Modal to update Reimbursements -->
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modalSize">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel">Resolve Reimbursement
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <img id="reimb_image" />                        
+                    </div>                    
+                    <div class="oneColumn">
+                    <div>
+                    	<h6>User</h6>
+                        <label id="reimb_author_username"></label>
+                     </div>
+                     <div>
+                        <h6>Email</h6>
+                        <label id="reimb_author_email"></label>
+                      </div>
+                      <div>
+                        <h6>First Name</h6>
+                        <label id="reimb_author_firstname"></label>
+                      </div>
+                      <div>  
+                        <h6>Last Name</h6>
+                        <label id="reimb_author_lastname"></label>
+                       </div> 
+                    </div>
+                    <div>
+                    	<h6>Description</h6>
+                        <p id="reimb_description">Description</p>
+                    </div>
+                    <div>
+                       	<label id="reimb_amount">Amount</label>
+                       	<label id="reimb_type">Type</label>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-bs-target="#exampleModalToggle" onclick="denyReimb()" data-bs-toggle="modal">Deny</button>
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" onclick="approveReimb()" data-bs-toggle="modal">Approve</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/js/utils.js"></script>
+	<script type="text/javascript" src="/js/manager/managerViewController.js"></script>
+	<script type="text/javascript" src="/js/manager/managerService.js"></script>
+    <script type="text/javascript" src="/js/manager/manager.js"></script>
+</body>
+</html>
